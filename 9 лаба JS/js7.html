@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title> Сдача 7 лабы JS </title>
+</head>
+<body>
+<form name="data">
+<fieldset>
+<legend>Сдача 7 лабы</legend>
+<p>Выберите кнопку:</p>
+<input type='radio' name='choice' value='1' /> Первая <br />
+<input type='radio' name='choice' value='2' /> Вторая <br />
+<input type='radio' name='choice' value='3' /> Третья <br />
+<br>
+<input type="button"/ value="Напечатать" name='printing' onclick='exercise1()'>
+</fieldset>
+</form>
+<script>
+function exercise1()
+{
+var second = window.open('','','');
+second.document.open();
+for(let i = 0; i < document.data.choice.length; i++)
+  {
+if(document.data.choice[i].checked)
+second.document.write(" Значение равно" + " " + document.data.choice[i].value);
+  }
+}
+</script>
+</body>
+</html>

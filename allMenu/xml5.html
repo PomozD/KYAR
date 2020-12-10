@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>5 лаба XML</title>
+</head>
+<body>
+	<h1>Студент</h1>
+	<div>
+		<p>Фамилия:</p>
+		<span id="surname"></span>
+		<br>
+		<p>Имя:</p>
+		<span id="name"></span>
+		<br>
+		<p>Средний балл:</p> 
+		<span id="average"></span>
+		<br>
+		<p>Год рождения:</p>
+		<span id="year"></span>
+		<br>
+	</div>
+	<script>
+		if (window.XMLHttpRequest) {
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+		var fname = prompt("Введите имя", 'Имя');
+
+		for (var i = 1; i < 5; i++) {
+			xmlhttp.open('GET', i + '.xml', false);
+			xmlhttp.send();
+			xmlDoc = xmlhttp.responseXML;
+
+			for (var j = 1; j < 4; j++) {
+				if (xmlDoc.getElementById('fn' + j).innerHTML == (fname + ' ')) {
+
+					document.getElementById('surname').innerHTML = xmlDoc.getElementById('sn' + j).innerHTML;
+					document.getElementById('name').innerHTML = xmlDoc.getElementById('fn' + j).innerHTML;
+					document.getElementById('average').innerHTML = xmlDoc.getElementById('av' + j).innerHTML;
+					document.getElementById('year').innerHTML = xmlDoc.getElementById('ye' + j).innerHTML;
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

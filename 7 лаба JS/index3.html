@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кинотеатр</title>
+</head>
+<body>
+<form name="data">
+<fieldset>
+<textarea id="text1">Кинотеатр "Октябрь"</textarea>
+<br/>
+<br/>
+<input type="text" name=lastname placeholder="Фамилия"><br/>
+<input type="text" name="name" placeholder="Имя"><br/><br/>
+<b>Выбор жанра: </b>
+<select id="select1">
+<option>Драма</option>
+<option>Комедия</option>
+<option>Триллер</option>
+<option>Боевик</option>
+<option>Фантастика</option>
+<option>Ужасы</option>
+</select>
+<br/>
+<br/>
+<b>Отзыв:</b><br/>
+<textarea id="text2">Добротный кинотеатр нового стиля. В утренние сеансы в зале немноголюдно, что позволяет в полной мере насладиться фильмом, а не звуком хруста чипсов от студентов БНТУ.</textarea>
+</fieldset>
+</form>
+<input type="button" name="search" value="Найти фильмы" onclick="search()" /><br/>
+<script>
+function search()
+{
+secwin = window.open('','','');
+secwin.document.open();
+secwin.document.write("В жанре " + document.getElementById("select1").value + " " + document.getElementById("text1").innerHTML + " " + "сегодня показывает следующие фильмы: " + "<br>");
+if (document.getElementById("select1").value == "Драма")
+  {
+  secwin.document.write("1917 <br> Во власти стихии");
+  }
+if (document.getElementById("select1").value == "Комедия")
+  {
+  secwin.document.write("Вперед <br> Достать ножи");
+  }
+if (document.getElementById("select1").value == "Триллер")
+  {
+  secwin.document.write("Анна <br> Вивариум");
+  }
+if (document.getElementById("select1").value == "Боевик")
+  {
+  secwin.document.write("Герой <br> Кома");
+  }
+if (document.getElementById("select1").value == "Фантастика")
+  {
+  secwin.document.write("Алладин <br> Бладшот <br> Шазам");
+  }
+if (document.getElementById("select1").value == "Ужасы")
+  {
+  secwin.document.write("Проклятие <br> Тихое место 2");
+  }
+}
+</script>
+</body>
+</html>

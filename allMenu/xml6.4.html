@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title> 6 лаба XML </title>
+</head>
+<body>
+  <svg width="1000" heigth="1000">
+    <rect fill="linen" width="100%" heigth="100%"/>
+    <style>
+      .col-1{ fill:red; }
+      .col-2{ fill:blue; }
+      .col-3{ fill:purple; }
+      .col-4{ fill:yellow; }
+      .col-5{ fill:black; }
+      </style>
+  <defs>
+   <path id = "house" d="M32 18.451l-16-12.42-16 12.42v-5.064l16-12.42 16 12.42zM28 18v12h-8v-8h-8v8h-8v-12l12-9z"/>
+  </defs>
+  <use xlink:href="#house" class="col-1" x="20" y="10" transform="rotate(35 36 26)"/>
+  <use xlink:href="#house" class="col-2" x="67" y="10" transform="rotate(100 83 26)"/>
+  <use xlink:href="#house" class="col-3" x="114" y="10" transform="rotate(140 130 26)"/>
+  <use xlink:href="#house" class="col-4" x="20" y="10" transform="rotate(180 170 26)"/>
+  <use xlink:href="#house" class="col-5" x="20" y="10" transform="rotate(200 120 26)"/>
+</svg>
+</body>
+</html>

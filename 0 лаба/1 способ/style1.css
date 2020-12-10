@@ -1,0 +1,16 @@
+.table
+{
+	width: 700px;
+	height: 100px;
+	border: 2px solid #ec0a0a;
+	text-align: center;
+	font-family: Calibri;
+}
+td a:visited
+{
+	color:#07801d;
+}
+td a:hover
+{
+	color:#0091ff;
+}

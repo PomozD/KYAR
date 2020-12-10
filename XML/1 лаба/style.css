@@ -1,0 +1,27 @@
+div
+{
+margin-top: 50px;
+text-align: center;
+font-size: 30px;
+font-family: Arial;
+}
+UNIVERSITY
+{ display:block;
+text-align:center;
+margin:100px 100px 100px 100px;
+font-size:15pt
+}
+NAME
+{ font-style:italic;
+text-align:center}
+CITY
+{ display:block;
+text-align:center;
+font-weight:bold;
+border-top: groove;
+border-color:#8C0088}
+LENGTH
+{ display:block;
+text-align:center;
+border-top:groove;
+border-color:#8C0088}

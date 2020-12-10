@@ -1,0 +1,137 @@
+body {
+	font-family: Calibri;
+}
+#site {
+	max-width: 1440px;
+	min-width: 1440px;
+	margin: auto;
+	margin-top: 10px;
+	display:flex;
+	align-items: flex-start;
+}
+#info {
+	width: 440px;
+	min-width:440px;
+	order: 2;
+}
+#content {
+	width: 1000px;
+	min-width: 1000px;
+	order: 1;
+	display:flex;
+	flex-direction: column;
+}
+#header {
+	text-align: center;
+	font-size:32px;
+	color: #5266f0;
+	padding-top:10px;
+	background-color: #aed9e7;
+	height:100px;
+}
+#middle {
+	display: flex;
+	align-items: flex-start;
+}
+#menu {
+	min-width:250px;
+	background-color: #f0e78d;
+	padding-bottom:40px;
+	order:1;
+}
+	#window {
+	width: 750px;
+	height:464px;
+	min-width:750px;
+	background-position: right;
+	background-repeat: repeat-y;
+	padding-top:5px;
+	order:2;
+	display:flex;
+	flex-direction: column;
+}
+#info .word {
+	margin-left: 160px;
+	font-size:32px;
+	color: #000;
+}
+div .word
+{
+	transition: all 0.5s ease;
+	transform: rotate(0deg);
+}
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#info .photo {
+	margin-left: 20px;
+	margin-top: 10px;
+}
+#info .text {
+	font-size:25px;
+	color: #000;
+	margin: 20px 40px 0 20px;
+	line-height: 30px;
+}
+#info h1 {
+	font-weight: bold;
+	font-size: 30px;
+	margin-left:20px;
+	margin-top: 20px;
+}
+#content .word {
+	margin-left:300px;
+	font-size:32px;
+	color: #000;
+}
+#phototext {
+display:flex;
+}
+#content .text, .text2 {
+	font-size:25px;
+	color: #000;
+	margin: 20px 40px 0 20px;
+	line-height: 30px;
+}
+#content .text2 {
+	font-size:25px;
+	color: #000;
+	margin: 0px 40px 0 20px;
+	line-height: 30px;
+}
+#content .photo {
+	margin: 20px 20px 20px 20px;
+}
+#menu h1 {
+	font-weight: bold;
+	font-size: 30px;
+	margin-left:20px;
+	margin-top: 40px;
+}
+li {
+	list-style-type: circle;
+	font-size: 22px;
+	margin-left: 37px;
+	margin-top:30px;
+	font-weight: bold;
+}
+#footer {
+	width: 1000px;
+	text-align: center;
+	font-size:32px;
+	color: #5266f0;
+	padding-top:15px;
+	background-color: #aed9e7;
+	height:100px;
+}
+#info .pet {
+	font-size:25px;
+	color: #000;
+	margin: 15px 40px 0 20px;
+	line-height: 30px;
+}
+p {
+	text-indent: 20px;
+}

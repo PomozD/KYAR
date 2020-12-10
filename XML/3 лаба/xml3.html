@@ -1,0 +1,40 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <xsl:stylesheet version="1.0"
+ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+ <xsl:template match="/">
+ <html>
+ <head>
+   <title> 3 лабораторная работа XML </title>
+</head>
+ <body>
+   <div> Веб-Дизайн в разных университетах Беларуси. </div>
+   <hr>
+  <table border="1">
+  <tr bgcolor="#07e0dd">
+  <th style="text-align:center">Название</th>
+  <th style="text-align:center">Город</th>
+  <th style="text-align:center">Продолжительность</th>
+  </tr>
+ <xsl:for-each select="UNIVERSITY">
+  <tr>
+  <td><xsl:value-of select="NAME">Институт бизнеса БГУ</td>
+  <td><xsl:value-of select="CITY">Минск</td>
+  <td><xsl:value-of select="LENGTH">19 месяцев (3 семестра)</td>
+  </tr>
+  <tr>
+  <td><xsl:value-of select="NAME">БГУИР</td>
+  <td><xsl:value-of select="CITY">Минск</td>
+  <td><xsl:value-of select="LENGTH">20 месяцев (3 семестра)</td>
+  </tr>
+  <tr>
+  <td><xsl:value-of select="NAME">Филиал БНТУ</td>
+  <td><xsl:value-of select="CITY">Минск</td>
+  <td><xsl:value-of select="LENGTH">17 месяцев</td>
+  </tr>
+ </xsl:for-each>
+ </table>
+ </body>
+ </html>
+ </xsl:template>
+ </xsl:stylesheet>
+ 

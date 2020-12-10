@@ -1,0 +1,30 @@
+table {
+border: 2px solid #ec0a0a;
+}
+ul li {
+border:2px solid;
+display:inline;
+border-color:#f30202;
+width: 100px;
+height: 100px;
+}
+ a.thefourth:visited
+{
+	color:#07801d;
+}
+a.thefifth:visited
+{
+ color:#07801d;
+}
+ a.thefirst:hover
+{
+	color:#0091ff;
+}
+a.thesecond:hover
+{
+ color:#0091ff;
+}
+a.thethird:hover
+{
+ color:#0091ff;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style1.xsl"?>
+<JOB>
+  <PERSON>
+    <NAME> Петр Петров</NAME>
+    <YEAR>3</YEAR>
+  </PERSON>
+  <PERSON>
+    <NAME> Иван Иванов</NAME>
+    <YEAR>2</YEAR>
+  </PERSON>
+  <PERSON>
+    <NAME> Василий Васильев</NAME>
+    <YEAR>3</YEAR>
+  </PERSON>
+</JOB>

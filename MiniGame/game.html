@@ -1,0 +1,102 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> Собрать слово на Jquery </title>
+  <script src="jquery-3_3_1_min.js"></script>
+  <script src="jcanvas_min.js"></script>
+  <script src="jquery-3_4_1.js"></script>
+  <script src="jcanvas.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <style>
+    h1
+    {
+      font-size: 80px;
+      color: white;
+    }
+    .text 
+    {
+      color: white;
+      font-family: Arial;
+      font-size: 70px;
+      display:flex;
+      flex-direction: row;
+    }
+    .block
+    {
+    align-content:center;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    }
+    .block1
+    {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    border: 4px groove white;
+    }
+  </style>
+</head>
+<body background="wall.jpg">
+  <center>
+    <h1> Соберите слово JQuery </h1>
+    <hr>
+    <div class="block">
+      <div class="block1"> </div>
+      <div class="block1"> </div>
+      <div class="block1"> </div>
+      <div class="block1"> </div>
+      <div class="block1"> </div>
+      <div class="block1"> </div>
+    </div>
+    <hr>
+    <div class="text">
+      <p id="y"> y </p>
+      <p id="u"> u </p>
+      <p id="J"> J </p>
+      <p id="e"> e </p>
+      <p id="Q"> Q </p>
+      <p id="r"> r </p>
+    </div>
+  </center>
+<script>
+$(document).ready(function(){
+  $("#J").draggable();
+
+  $("#J").mouseup(function(){
+    $("#J").animate({fontSize: 120}, 1500);
+  })
+
+  $("#Q").draggable();
+
+  $("#Q").mouseup(function(){
+    $("#Q").animate({fontSize: 120}, 1500);
+  })
+
+  $("#u").draggable();
+
+  $("#u").mouseup(function(){
+    $("#u").animate({fontSize: 120}, 1500);
+  })
+
+  $("#e").draggable();
+
+  $("#e").mouseup(function(){
+    $("#e").animate({fontSize: 120}, 1500);
+  })
+
+  $("#r").draggable();
+
+  $("#r").mouseup(function(){
+    $("#r").animate({fontSize: 120}, 1500);
+  })
+
+  $("#y").draggable();
+
+  $("#y").mouseup(function(){
+    $("#y").animate({fontSize: 120}, 1500);
+  })
+});
+</script>
+</body>
+</html>

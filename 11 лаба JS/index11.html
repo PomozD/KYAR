@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>11 лаба JS</title>
+        <script src="jquery-3_3_1_min.js"></script>
+        <script src="jcanvas_min.js"></script>
+        <script src="jquery-3_4_1.js"></script>
+        <script src="jcanvas.min.js"></script>
+    </head>
+    <body>
+        <center>
+        <h1 ali>Лаба 8 JS</h1>
+        <h2>Задание 1</h2>
+            <div id="exercise1">При наведении курсора изменится цвет</div>
+            <hr>
+        <h2>Задание 2</h2>
+            <div id="exercise2">Текст при нажатии увеличится</div>
+            <hr>
+        <h2>Задание 3</h2>
+            <div> При нажатии на картинку она изменится</div>
+            <img id="exercise3" src="img1.jpg" width="200" height="150">
+            <hr>
+        <h2>Задание 4</h2>
+            <div id="exercise4">При нажатии появится картинка</div>
+            <hr>
+        <h2>Задание 5</h2>
+            <div> При нажатии картинка увеличится </div>
+            <img id="exercise5" src="img2.jpg" width="200" height="150">
+            <hr>
+        <h2>Задание 6</h2>
+            <div id="exercise6">После двойного нажатия появится рамка</div>
+        </center>
+        <script>
+// 1 задание
+        $(document).ready(function(){
+            $("#exercise1").mouseover(function(){
+                $("#exercise1").css("color","red");
+            })
+            $("#exercise1").mouseout(function(){
+                $("#exercise1").css("color","black");
+            })
+
+// 2 задание
+            $("#exercise2").click(function(){
+                if($("#exercise2").css("font-size") == '10px'){
+                    $("#exercise2").css("font-size", "10px");
+                }
+                else{
+                    $("#exercise2").css("font-size", "50px");
+                }
+            })
+
+// 3 задание
+            $("#exercise3").click(function(){
+                if($("#exercise3").attr("src") == "img1.jpg")
+                    {
+                        $("#exercise3").attr("src", "img2.jpg");
+                    }else{
+                        $("#exercise3").attr("src", "img1.jpg");
+                    }
+
+            })
+
+
+// 4 задание
+            $("#exercise4").click(function(){
+                $("#exercise4").html('<img src="img2.jpg"/>');
+            })
+
+// 5 задание
+            $("#exercise5").mouseover(function(){
+                $("#exercise5").css("width", "600px").css("height", "600px");
+            })
+            $("#exercise5").mouseout(function(){
+                $("#exercise5").css("width", "200px").css("height", "150px");
+            })
+
+// 6 задание
+            $("#exercise6").dblclick(function(){
+              $("#exercise6").css("border", "2px solid black");
+            })
+        });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title> 7 лаба JS 2 задание </title>
+</head>
+<body>
+<form name=data>
+<fieldset>
+<textarea id='text1'>
+Факультет информационных технологий
+</textarea>
+<br>
+<input type="text" name=lastname placeholder="Фамилия" id=""><br />
+<input type="text" name="name" placeholder="Имя"><br /><br />
+Специальность:
+<select id='select1'>
+<option> ПОИТ </option>
+<option> ИСИТ </option>
+<option> ПОИБМС </option>
+<option> ДЭиВИ </option>
+</select>
+<br>
+Курс:
+<br>
+<input type="radio"/ name="year" value="1"> 1
+<input type="radio"/ name="year" value="2"> 2
+<input type="radio"/ name="year" value="3"> 3
+<input type="radio"/ name="year" value="4"> 4
+<br>
+Предметы:
+<br>
+<input type='checkbox' name='subjects' value="ОИТ">  ОИТ
+<input type='checkbox' name='subjects' value="ОАП">  ОАП
+<input type='checkbox' name='subjects' value="История">  История
+<input type='checkbox' name='subjects' value="Математика">  Математика
+<input type='checkbox' name='subjects' value="Физика">  Физика
+<br>
+<br>
+<input type="submit"/ value="submit" name='reset'>
+<input type="reset"/ value="reset" name='reset'>
+<br>
+<br>
+<input type="button"/ value="Напечатать" name='printing' onclick='exercise1()'>
+</fieldset>
+<input type="button" name="printing" value="Список" onclick="alist()">
+</form>
+  <div id="list"></div>
+<script>
+function exercise1()
+{
+var secwin = window.open('','','');
+secwin.document.open(); 
+secwin.document.write(document.getElementById("text1").innerHTML + "<br />");
+secwin.document.write("Студент" + " " + document.data.lastname.value + " специальность ");
+secwin.document.write(document.getElementById("select1").value );
+for(let i = 0; i < document.data.year.length; i++)
+  {
+if(document.data.year[i].checked)
+secwin.document.write(" курс"+ " " + document.data.year[i].value);
+  }
+secwin.document.write(" должен сдавать следующие предметы: ");
+secwin.document.write("<ol>");
+for(let i = 0; i < document.data.subjects.length; i++)
+  {
+    if(document.data.subjects[i].checked)
+    secwin.document.write("<li>" + document.data.subjects[i].value + "</li>");
+  }
+secwin.document.write("</ol>");
+}
+function alist()
+{
+let list = document.getElementById("list");
+for(let i = 0; i < document.data.subjects.length; i++)
+  {
+    if(document.data.subjects[i].checked)
+    list.innerHTML += "<li>" + document.data.subjects[i].value + "</li>";
+  }
+}
+</script>
+</form>
+</body>
+</html>

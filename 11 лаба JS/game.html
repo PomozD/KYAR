@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> Собрать слово на Jquery </title>
+  <script src="jquery-3_3_1_min.js"></script>
+  <script src="jcanvas_min.js"></script>
+  <script src="jquery-3_4_1.js"></script>
+  <script src="jcanvas.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <style>
+    h1
+    {
+      font-size: 80px;
+      color: white;
+    }
+    div
+    {
+      color: white;
+      font-family: Arial;
+      font-size: 70px;
+      display:flex;
+      flex-direction: row;
+    }
+  </style>
+</head>
+<body background="wall.jpg">
+  <center>
+    <h1> Соберите слово JQuery </h1>
+    <hr>
+    <div class="div">
+      <p id="y"> y </p>
+      <p id="u"> u </p>
+      <p id="J"> J </p>
+      <p id="e"> e </p>
+      <p id="Q"> Q </p>
+      <p id="r"> r </p>
+    </div>
+    <hr>
+  </center>
+<script>
+  $("#J").draggable(){
+  $("#Q").draggable();
+  $("#u").draggable();
+  $("#e").draggable();
+  $("#r").draggable();
+  $("#y").draggable();
+</script>
+</body>
+</html>

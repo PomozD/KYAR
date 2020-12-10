@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <title> 1 лаба HTML5 </title>
+  <style>
+    mark {
+    background: #ffec82;
+    padding: 0 3px;
+        }
+  </style>
+</head>
+<body background="nebo1.jpg">
+<h1 align="center"> <font face="Arial" color="White" size="+5">Я, <mark> Помоз Даниил</mark>, изучаю HTML5 </h1>
+<audio src="mocart_-_simfoniya-40.mp3" controls="controls"> </audio>
+<br>
+<video src="kotiki.mp4" width="450" height="300" controls="controls"></video> 
+<br>
+<mark> Координаты пользователя </mark>
+<br>
+<input type="button" value="Координаты" onclick="getCoordinates()">
+<script>
+function getCoordinates() {
+navigator.geolocation.getCurrentPosition(showCoordinates);
+}
+function showCoordinates(position) {
+document.write("Широта:" + position.coords.latitude + "<br/>");
+document.write("Долгота:" + position.coords.longitude);
+}
+</script>
+
+</body>
+</html>

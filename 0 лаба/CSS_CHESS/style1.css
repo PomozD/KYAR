@@ -1,0 +1,48 @@
+.table
+{
+	width: 650px;
+	height: 650px;
+	border-collapse: collapse;
+
+}
+td {
+	border: 1px solid grey;
+}
+td {
+background-color:green;
+}
+/*odd - нечетный even - четный */
+tr:nth-child(even) td:nth-child(odd) {
+background-color:blue;
+}
+tr:nth-child(odd) td:nth-child(even) {
+background-color: blue;
+}
+tr:nth-child(even) td:first-child {
+	width: 40px;
+background-color:red;
+}
+tr:nth-child(odd) td:first-child {
+background-color:red;
+}
+tr:nth-child(even) td:last-child {
+	width:40px;
+background-color:red;
+}
+tr:nth-child(odd) td:last-child {
+	background-color:red;
+}
+tr:first-child td:nth-child(even) {
+	height:40px;
+background-color:red;
+}
+tr:first-child td:nth-child(odd) {
+background-color:red;
+}
+tr:last-child td:nth-child(even) {
+background-color:red;
+}
+tr:last-child td:nth-child(odd) {
+	height:40px;
+background-color:red;
+}

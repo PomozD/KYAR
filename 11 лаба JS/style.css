@@ -1,0 +1,22 @@
+nav {background-color: black;}
+nav ul{
+padding: 1;
+margin: 0;
+list-style: none;
+position: relative;}
+nav ul li{
+margin: 20px 38px 0 0;
+display: inline-block;
+background-color: black;}
+nav a{
+display: block;
+padding: 0 50px;
+color: #ef0000;
+font-size: 20px;
+text-decoration: none;}
+nav a:hover{ background-color: white;}
+nav ul ul{
+display: none;
+position: absolute;
+top: 100%;}
+nav ul li:hover>ul {display:inherit;}

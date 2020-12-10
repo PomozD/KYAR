@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+		<full_name>
+			<surname id="sn1">Иванов </surname>
+			<name id="fn1">Иван </name>
+		</full_name>
+		<average id="av1">7.6</average>
+		<year id="ye1">2001</year>
+	</student>
+	<student>
+		<full_name>
+			<surname id="sn2">Петров </surname>
+			<name id="fn2">Петр </name>
+		</full_name>
+		<average id="av2">6.1</average>
+		<year id="ye2">1999</year>
+	</student>
+	<student>
+		<full_name>
+			<surname id="sn3">Васильев </surname>
+			<name id="fn3">Василий </name>
+		</full_name>
+		<average id="av3">8.2</average>
+		<year id="ye3">2000</year>
+	</student>
+</students>

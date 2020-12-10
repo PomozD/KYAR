@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>11 лаба JS</title>
+  <script src="jquery-3_3_1_min.js"></script>
+  <script src="jcanvas_min.js"></script>
+  <script src="jquery-3_4_1.js"></script>
+  <script src="jcanvas.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <style>
+    .size{font-size: 20px;}
+		#canvas{
+			width:400px;
+			height:400px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+  <center>
+    <h1>Лаба 9 JS</h1>
+    <h3>1 задание</h3>
+    <img id="exercise1" src="img1.jpg" style="width: 200px; height: 200px" />
+    <div id="exercise2" style ="font-size: 50px;" >Передвинуть текст</div>
+    <h3>2 задание</h3>
+    <img id="exercise3" src="img2.jpg" onclick="img2()" style="width:100px; height:100px;" />
+    <h3>3 задание</h3>
+    <img id = "exercise4" src = "img1.jpg"  style ="height:100px; width:100px;"/>
+    <h3>4 задание</h3>
+    <h5>График</h5>
+    <div style="top:600px; left:30px">
+    <form action="#" name="form">
+      <form name="graphic">
+  			<p class="size">Выберите цвет:</p>
+  				<select id='color' name='color'>
+  					<option id='blue' value="green">Зеленый</option>
+  					<option id='red' value="red">Красный</option>
+  					<option id='black' value="black">Черный</option>
+  				</select><br/>
+  			<input type="radio" name='funct' value='1'/>y=x^2<br>
+  			<input type="radio" name='funct' value='2'/>y=x^3<br>
+  			<input type="radio" name='funct' value='3'/>y=sin(x)<br>
+  			<input type="radio" name='funct' value='4'/>y=cos(x)<br>
+  		</form>
+      <input type="button" onclick='grap()' id="btn" value='Нарисовать'>
+
+    </form>
+    <div>
+        <canvas id="graph" width="525" height="400"></canvas>
+    </div>
+  </center>
+  <script>
+        $(function(){
+          $("#exercise1").draggable();
+          $("#exercise2").draggable();
+      });
+
+      $("#exercise3").click(function(){$("#exercise3").animate({marginLeft:420},1000)});
+
+      $("#exercise4").click(function(){
+          let y;
+          for(let x = 1; x < 10; x = x + 0.5){
+              y = 100 + (Math.sin(x)) * 50;
+              $("#exercise4").animate({
+                  marginLeft: x * 40,
+                  marginTop: y
+              }, 100);
+          }
+      })+
+
+      $(document).ready(function () {
+          $('#btn').click(function () {
+              let $graph = $('#graph');
+              let $fun = $(":radio");
+              let $funct;
+              for (i = 0; i < 4; i++) {
+                  if ($fun[i].checked) {
+                      $funct = $fun[i].value;
+                  }
+              }
+
+              let $color = $('#color').val();
+
+              if($funct==1){
+                  let i=-10;
+                  for (let X = 162.5; X <= 362.5; X += 1) {
+                      $graph.drawArc({
+                          fillStyle:$color,
+                          x: X,
+                          y: $graph.height()/2 - Math.pow(i, 2),
+                          radius:1
+                      });
+                      i+=0.1;
+                  };
+              }
+              else if($funct==2){
+                  let i=-10;
+                  for (let X = 162.5; X < 362.5; X += 1) {
+                      $graph.drawArc({
+                          fillStyle:$color,
+                          x: X,
+                          y: $graph.height()/2 - Math.pow(i, 3),
+                          radius:1
+                      });
+                      i+=0.1;
+                  };
+              }
+              else if($funct==3){
+                  let i=-10;
+                  for (let X = -42; X < $graph.width(); X += 1) {
+                      $graph.drawArc({
+                          fillStyle:$color,
+                          x: X,
+                          y:$graph.height()/2-Math.sin(i)*100,
+                          radius:1
+                      });
+                      i+=0.1;
+                  };
+              }
+              else if($funct==4){
+                  let i=-10;
+                  for (let X = -42; X < $graph.width(); X += 1) {
+                      $graph.drawArc({
+                          fillStyle:$color,
+                          x: X,
+                          y:$graph.height()/2- Math.cos(i)*100,
+                          radius:1
+                      });
+                      i+=0.1;
+                  };
+              };
+          });
+      });
+
+
+      $('.sortable-img').sortable();
+  </script>
+</body>
+</html>

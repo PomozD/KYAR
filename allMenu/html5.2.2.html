@@ -1,0 +1,68 @@
+<html>
+<body>
+  <canvas width="500" height="500" id="canvas"></canvas>
+  <script>
+    var data = [ 30, 80, 35 ];
+    // получаем указатель на холст
+var canvas = document.getElementById('canvas');
+
+// получаем указатель на контекст рисования
+var c = canvas.getContext('2d');
+// рисуем
+c.fillStyle = "white";
+c.fillRect(0,0,500,500);
+// рисуем данные
+
+for(var i=-1; i<1 ; i++) {
+  var dp = data[i];
+  c.fillRect(40 + i*100, 460-dp*5 , 50, dp*5);
+  c.fillStyle="blue";
+}
+for(var i=0; i<2 ; i++) {
+  var dp = data[i];
+  c.fillRect(40 + i*100, 460-dp*5 , 50, dp*5);
+  var grad =c.createLinearGradient(0,0,0,150);
+  grad.addColorStop(0.5,'black');
+  grad.addColorStop(1.0,'red');
+  c.fillStyle=grad;
+}
+for(var i=2; i<3 ; i++) {
+  var dp = data[i];
+  let img = new Image();
+img.src = "html5.jpg";
+img.onload = function(){
+let pattern = c.createPattern(img, "repeat");
+c.fillStyle = pattern;
+c.fillRect(87 + i*50, 460-dp*5 , 50, dp*5);
+}
+}
+// рисуем осевые линии
+c.fillStyle = "black";
+c.lineWidth = 2.0;
+c.beginPath();
+c.moveTo(30,10);
+c.lineTo(30,460);
+c.lineTo(490,460);
+c.stroke();
+// рисуем текст и вертикальные линии
+c.fillStyle = "black";
+for(var i=0; i<6; i++) {
+  c.fillText((5-i)*3 + "",5, i*80+60);
+  c.beginPath();
+  c.moveTo(25,i*80+60);
+  c.lineTo(30,i*80+60);
+  c.stroke();
+}
+var labels = ["Сон","Учеба","Досуг"];
+// выводим текст
+for(var i=0; i<3; i++) {
+  c.fillText(labels[i], 50+ i*100, 475);
+}
+c.fillStyle = "black";
+c.font = "20pt sans-serif";
+var text = "Распорядок дня";
+var metrics = c.measureText(text);
+c.fillText(text, 250, 100);
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Защита 5 лабы </title>
+</head>
+<body bgcolor="#5F9EA0">
+<h1 align="center" id="h1"> Первый заголовок </h1>
+<h2 align="center" style="color:#793700"> Второй заголовок</h2>
+<h3 align="center" style="color:#880202" id="h3"> Третий заголовок</h3>
+<script>
+
+
+        document.write("<br>" + "Через All: ");
+        let str = document.all[0]("h1");
+        
+
+       /*document.write("<br>" + "Через коллекцию all: ");
+       let str=document.all.tags("h1");
+       document.write(str[0].innerHTML);*/
+
+        /*var testQuery = document.querySelector(‘#h1’);
+        document.write(testQuery[0].innerHTML);
+
+        /*document.write("<br>" + "Через All: ");
+        var el1 = document.all.tags(<h1>);
+        document.write(el1.innerHTML);*/
+
+        document.write("<br>" + "Через All: ");
+        let el1 = document.querySelectorAll("h1");
+        document.write(el1[0].innerHTML);
+
+        document.write("<br>" + "Через частную колекцию: ");
+        let el2 = document.getElementsByTagName("h2");
+        document.write(el2[0].innerHTML);
+
+        document.write("<br>" + "Через идентификатор: ");
+        document.write(document.getElementById("h3").innerHTML);
+    </script>
+</body>
+</html>

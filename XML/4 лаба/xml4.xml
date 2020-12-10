@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<UNIVERSITY>
+  <GROUP>
+    <NAME> Петр Петров</NAME>
+    <PASSING>7.0</PASSING>
+    <YEAR>2001</YEAR>
+  </GROUP>
+  <GROUP>
+    <NAME> Иван Иванов</NAME>
+    <PASSING>6.0</PASSING>
+    <YEAR>2001</YEAR>
+  </GROUP>
+  <GROUP>
+    <NAME> Василий Васильев</NAME>
+    <PASSING>5.0</PASSING>
+    <YEAR>2002</YEAR>
+  </GROUP>
+</UNIVERSITY>

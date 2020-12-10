@@ -1,0 +1,149 @@
+<html lenguage="ru">
+<head>
+	<title>9 лаба JS</title>
+	<style>
+    .size{font-size: 20px;}
+		#canvas{
+			width:400px;
+			height:400px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body> 
+  <img id="img1" src="img1.jpg" style="position:absolute; width: 200px; height: 200px" />
+	<div id="text" style ="position:absolute; top:200px; font-size: 50px;" >Передвинуть текст</div>
+	<img id="img2" src="img2.jpg" onclick="img2()" style="position:absolute; top:330px; left:20px; width:100px; height:100px;" />
+	<img id = "z3" src = "img1.jpg"  style ="position:absolute; top:450px; height:100px; width:100px;"/>
+	<div style="position:absolute; top:600px; left:30px">
+		<form name="graphic">
+			<p class="size">Выберите цвет:</p>
+				<select id='select' name='color'>
+					<option id='blue' value="green">Зеленый</option>
+					<option id='red' value="red">Красный</option>
+					<option id='black' value="black">Черный</option>
+				</select><br/>
+			<input type="radio" name='s' value='1'/>y=x^2<br>
+			<input type="radio" name='s' value='2'/>y=x^3<br>
+			<input type="radio" name='s' value='3'/>y=sin(x)<br>
+			<input type="radio" name='s' value='4'/>y=cos(x)
+		</form>
+	<input type="button" onclick='grap()' value='Нарисовать'>
+	</div>
+	<canvas id="canvas" width="400px" height="400px" style="position:absolute; top:650px; left:200px; margin:5px;"></canvas>
+</body>
+<script>
+    var img1=document.getElementById('img1');
+	img1.onmousedown = function() {
+		document.onmousemove = function(x) {
+			img1.style.left = x.pageX - img1.offsetWidth / 2 + 'px';
+			img1.style.top = x.pageY - img1.offsetHeight / 2 + 'px';
+		}
+		img1.onmouseup = function() {
+			document.onmousemove = null;
+		}
+		img1.ondragstart = function() {
+			return false;
+		};
+	}
+	var text=document.getElementById('text');
+	text.onmousedown = function() {
+		document.onmousemove = function(x) {
+			text.style.left = x.pageX - text.offsetWidth / 2 + 'px';
+			text.style.top = x.pageY - text.offsetHeight / 2 + 'px';
+		}
+		text.onmouseup = function() {
+			document.onmousemove = null;
+		}
+		text.ondragstart = function() {
+			return false;
+		};
+	}
+	function img2() {
+		var img2 = setInterval(function() {
+			dx=10,dy=0;
+			у = parseInt(document.all['img2'].style.top);
+			x = parseInt(document.all['img2'].style.left);
+			document.all.img2.style.top = у+dy+'px';
+			document.all.img2.style.left = x+dx+'px';
+
+			if(parseInt(document.all['img2'].style.left)>1600){
+				clearInterval(img2);
+			}
+		}, 20);
+	}
+	z3.onclick=function() {
+		a=0;
+		flag=true;
+		var z3=setInterval(function move() {
+			yexpr=Number(500+20*Math.sin(0.03*a));
+			xexpr=Number(50 + a);
+			if(parseInt(document.all['z3'].style.left)>500 && flag==true) {
+				flag=false;
+			}
+			if(flag) {
+				a++;
+				document.all['z3'].style.top = eval(yexpr);
+				document.all['z3'].style.left = eval(xexpr);
+			}
+			if(!flag && parseInt(document.all['z3'].style.left)>20) {
+				a--;
+				document.all['z3'].style.top = eval(yexpr);
+				document.all['z3'].style.left = eval(xexpr);
+			}
+		}, 7);
+	}
+	function grap() {
+		var canvas=document.getElementById('canvas');
+		var canx = canvas.getContext('2d');
+		var func=Number(document.forms.graphic.s.value);
+		var color=document.forms.graphic.color.value;
+		switch(func) {
+			case 1:{
+				var x=0;
+				var move=setInterval(
+					function f1() {
+						y=200-0.08*Math.pow(x-200, 2);
+						x=x+0.06;
+						canx.fillStyle=color;
+						canx.fillRect(x,y,2,2);
+					}, );
+				break;
+			}
+			case 2:{
+				var x=0;
+				var move=setInterval(
+					function f2() {
+						y=200-0.002*Math.pow(x-200, 3);
+						x=x+0.3;
+						canx.fillStyle=color;
+						canx.fillRect(x,y,2,2);
+					}, );
+				break;
+			}
+			case 3:{
+				var x=0;
+				var move=setInterval(
+					function f3() {
+						y=200+10*Math.sin(0.1*(x-200));
+						x=x+0.3;
+						canx.fillStyle=color;
+						canx.fillRect(x,y,2,2)
+					}, );
+				break;
+			}
+			case 4:{
+				var x=0;
+				var move=setInterval(
+					function f4() {
+						y=200+10*Math.cos(0.1*(x-200));
+						x=x+0.3;
+						canx.fillStyle=color;
+						canx.fillRect(x,y,2,2);
+					}, );
+				break;
+			}
+		}
+	}
+</script>
+</html>

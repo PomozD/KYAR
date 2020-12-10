@@ -1,0 +1,38 @@
+table td
+{
+	width: 70px;
+	height: 10px;
+	border: 2px solid;
+	border-color:#f30202;
+	text-align: center;
+	font-family: Calibri;
+}
+ul li
+{
+border:2px solid;
+display:inline;
+border-color:#f30202;
+text-align: center;
+font-family: Calibri;
+align: left-top;
+}
+ a.thefourth:visited
+{
+	color:#07801d;
+}
+a.thefifth:visited
+{
+ color:#07801d;
+}
+ a.thefirst:hover
+{
+	color:#0091ff;
+}
+a.thesecond:hover
+{
+ color:#0091ff;
+}
+a.thethird:hover
+{
+ color:#0091ff;
+}

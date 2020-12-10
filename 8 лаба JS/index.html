@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Лаба 8 JS</title>
+  <style type="text/css">
+  body
+  {text-align: center;}
+  </style>
+  </head>
+    <body>
+      <div id="exercise1"><h3>При наведении курсора изменится цвет</h3></div>
+        <hr>
+      <div id="exercise2"><h3>Текст при нажатии увеличится</h3></div>
+        <hr>
+      <h3>При нажатии на картинку она изменится</h3>
+        <img src="img1.jpg" width="200" height="150" id="exercise3" />
+        <hr>
+      <h3 id="exercise4">При нажатии появится картинка</h3>
+        <hr>
+      <h3> При нажатии картинка увеличится</h3>
+        <img src="img3.jpg" id="exercise5">
+        <hr>
+      <h3 id="h31">После двойного нажатия появится рамка</h3>
+        <hr>
+  <script>
+    var exercise1 = document.getElementById("exercise1");
+    exercise1.onmouseover = function () {
+    this.style.color ="red";
+    }
+    exercise1.onmouseout = function () {
+    this.style.color = "black";
+    }
+
+    var exercise2 = document.getElementById("exercise2");
+    exercise2.onclick = function () {
+    this.style.fontSize = "150%";
+    }
+
+    var exercise3 = document.getElementById("exercise3");
+    exercise3.onclick = function () {
+    this.src = "img3.jpg";
+    }
+
+    exercise4 = document.getElementById("exercise4");
+    exercise4.onclick = function () {
+    this.innerHTML = '<img src = "img3.jpg" width="200" height="150"> <p>Картинка</p>';
+  }
+
+    exercise5 = document.getElementById("exercise5");
+    exercise5.onmouseover = function () {
+    this.style.width = "25%";
+    }
+    exercise5.onmouseout = function () {
+    this.style.width = "10%";
+    }
+
+    exercise6 = document.getElementById("h31");
+    exercise6.ondblclick = function () {
+    this.style.border = " 3px solid #000000";
+    }
+  </script>
+    </body>
+</html>

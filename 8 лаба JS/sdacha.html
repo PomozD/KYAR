@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Сдача лабы 8 JS</title>
+  <style type="text/css">
+  body
+  {text-align: center;}
+  </style>
+  </head>
+    <body>
+        <hr>
+      <h3>После двойного нажатия по картинке появится рамка</h3>
+        <img src="img1.jpg" width="200" height="150" id="exercise1" />
+        <hr>
+  <script>
+    exercise1 = document.getElementById("exercise1");
+    exercise1.ondblclick = function () {
+    this.style.border = " 3px solid #032e73";
+    }
+  </script>
+    </body>
+</html>

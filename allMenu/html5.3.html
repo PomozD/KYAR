@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <title> 3 лаба HTML5 </title>
+  <style>
+    mark {
+    background: #ffec82;
+    padding: 0 3px;
+        }
+
+    p {
+      font-size:30px;
+      font-family:Arial;
+      color:white;
+    }
+  </style>
+</head>
+<body background="nebo6.jpg">
+<header>
+<h1 align="center"> <font face="Arial" color="White" size="+5">Я, <mark> Помоз Даниил</mark>, изучаю HTML5  </font> </h1>
+</header>
+<center>
+<nav>
+ <a href="exercise1.html"> <img src="circle.jpg" width="50" height="50"> </a>
+</nav>
+  <form name="form" oninput="result.value=(cm.value*100).toFixed(2)">
+  <p>Выберите любимого композитора:</p>
+    <p><input list="character">
+     <datalist required id="character">
+      <option value="Моцарт"></option>
+      <option value="Бетховен"></option>
+      <option value="Чайковский"></option>
+     </datalist>
+   </p>
+   <keygen autofocus="autofocus"> <span style="color:white ; font-size:200% " > Keygen </span>
+   <br>
+   <p>Введите длину в метрах:
+    <input type="number" name="cm" autofocus></p>
+    <p>Длина в сантиметрах: <output name="result">0</output></p>
+</form>
+<audio src="mocart_-_simfoniya-40.mp3" controls="controls"> </audio>
+<br>
+<video src="kotiki.mp4" width="450" height="300" controls="controls"></video>
+<br>
+<p> Координаты пользователя: </p>
+<br>
+<input type="button" value="Координаты" onclick="getCoordinates()">
+<footer>
+<p> Студент:
+<br>
+Помоз Даниил Сергеевич
+<br>
+Группа:13.
+<br>
+Специальность: ДЭиВИ.
+</p>
+<br>
+<p> Email: <input type="email" id="email" name="email"> </p>
+<p> Телефон в формате 29xxx-xx-xx:  <input type="tel" name="tel"
+   pattern="29[0-9]{3}[0-9]{2}[0-9]{2}"></p>
+</footer>
+</center>
+<script>
+function getCoordinates() {
+navigator.geolocation.getCurrentPosition(showCoordinates);
+}
+function showCoordinates(position) {
+document.write("Широта:" + position.coords.latitude + "<br/>");
+document.write("Долгота:" + position.coords.longitude);
+}
+</script>
+
+</body>
+</html>
